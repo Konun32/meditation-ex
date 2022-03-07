@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Edo';
+    src: local('Edo Regular'), local('Edo-Regular'),
+        url('Edo.woff2') format('woff2'),
+        url('Edo.woff') format('woff'),
+        url('Edo.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }

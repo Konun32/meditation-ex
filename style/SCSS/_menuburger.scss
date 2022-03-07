@@ -1,0 +1,82 @@
+@media (max-width: 698px){
+	.menu {
+		&__icon {
+			z-index: 5;
+			display: block;
+			position: relative;
+			width: 40px;
+			height: 28px;
+			cursor: pointer;
+
+			& span,
+			&::before,
+			&::after {
+				left: 0;
+				position: absolute;
+				height: 15%;
+				width: 100%;
+				transition: all 0.3s ease 0s;
+				background-color: #1A7F72;
+			}
+			&::before,
+			&::after {
+				content: "";
+			}
+			&::before {
+				top: 0;
+			}
+			&::after {
+				bottom: 0;
+			}
+			& span {
+				top: 50%;
+				transform: scale(1) translate(0px, -50%);
+			}
+
+			&._active span{
+				transform: scale(0) translate(0px, -50%);
+			}
+			&._active::before {
+				top: 50%;
+				transform: rotate(-45deg) translate(0px, -50%);
+			}
+			&._active::after {
+				bottom: 50%;
+				transform: rotate(45deg) translate(0px, 50%);
+			}
+		}
+		&__body {
+			position: fixed;
+			top: 0;
+			left: -100%;
+			width: 100%;
+			height: 100%;
+			background-color: #fff;
+			padding: 100px 30px 30px 30px;
+			transition: left 0.3s ease-in 0s;
+			overflow: auto;
+
+			&._active{
+				left: 0;
+			}
+
+			&::before {
+				content: "";
+				position: fixed;
+				width: 100%;
+				top: 0;
+				left: 0;
+				height: 60px;
+				background-color: #fff;
+				z-index: 2;
+			}
+		}
+		&__list > li {
+			flex-wrap: wrap;
+			margin: 0 0 40px 0;
+		}
+		&__link {
+			font-size: 28px;
+		}
+	}
+}
